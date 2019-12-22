@@ -1,7 +1,16 @@
 class Size{
-    constructor(id, item, size){
+
+    /**
+     * 
+     * @param {Integer} id 
+     * @param {Integer} itemID 
+     * @param {Array} sizes 
+     */
+    constructor(id, itemID, sizes){
         this.id = id,
-        this.item = item,
-        this.size = size
+        this.itemID = itemID,
+        this.sizes = sizes
     }
 }
+
+module.exports = Size;

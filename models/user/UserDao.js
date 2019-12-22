@@ -16,7 +16,7 @@ class UserDao{
     saveUser(User, callback){
         const {pass, email, firstName, lastName} = User;
 
-        connection.query('INSERT INTO `User` (Pass, Email, FirstName, LastName) VALUES (?, ?, ?, ?)', [pass, email, firstName, lastName], (err, res) => {
+        connection.query('INSERT INTO `user` (pass, email, first_name, last_name) VALUES (?, ?, ?, ?)', [pass, email, firstName, lastName], (err, res) => {
             if(err){
                 console.error(err)
                 callback(true)
@@ -33,7 +33,7 @@ class UserDao{
      * Used in: POST/user/register
      */
     isEmailAvailable(email, callback){
-        connection.query('SELECT * FROM `User` WHERE email=?', [email], (err, res) => {
+        connection.query('SELECT * FROM `user` WHERE email=?', [email], (err, res) => {
             if (err){
                 callback(err, null)
             }
@@ -63,8 +63,8 @@ class UserDao{
                 callback(null, false) // No user found with this email
             }
             else{
-                const {ID, FirstName, LastName, Email, Pass} = res[0]
-                const U1 = new User(ID, FirstName, LastName, Email, Pass)
+                const {id, first_name, last_name, email, pass} = res[0]
+                const U1 = new User(id, first_name, last_name, email, pass)
                 callback(null, U1)
             }          
         })
