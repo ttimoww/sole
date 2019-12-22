@@ -13,4 +13,8 @@ app.use('api/user', loginUser)
 const saveSize = require('./routes/size/save')
 app.use('/api/size', saveSize)
 
+// Get Item route
+const findItem = require('./routes/item/find')
+app.use('/api/item', findItem)
+
 app.listen('9090', () => console.log('Server started on port : 9090'))
