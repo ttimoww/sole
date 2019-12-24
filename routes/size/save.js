@@ -8,8 +8,8 @@ router.use(express.json());
  * Expected body: {itemID: int, sizes: array}
  */
 router.post('/save', (req, resp) => {
-    const s1 = new Size(null, req.body.itemID, req.body.sizes)
-    SizeDao.saveSize(s1, err => {
+    const S1 = new Size(null, req.body.itemID, req.body.sizes)
+    SizeDao.saveSize(S1, err => {
         if(err){
             resp.status(500);
             resp.json({message: 'Oops, something went wrong!'})

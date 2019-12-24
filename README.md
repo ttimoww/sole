@@ -1,7 +1,7 @@
 # Sole
 ---
 ## Summary
-This repository contains an sneaker buying & selling platform build with the Data Access Object Pattern in Nodejs with an Reactjs frontend. Note that I'm not going to use this app. I'm only creathing this for edicational purposes.
+This repository contains an sneaker buying & selling platform build with the Data Access Object Pattern in Nodejs with an Reactjs frontend. Note that I'm not going to use this app. I'm only creating this for fun.
 
 ---
 
@@ -37,6 +37,7 @@ npm run dev
 1. /api/user/login
 2. /api/user/register
 3. /api/size/save
+4. /api/item/get/{id}
 
 ## Used media
 1. Images: All images used in this app are originally from https://stockx.com. I do not own any of these images.

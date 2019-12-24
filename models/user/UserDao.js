@@ -1,6 +1,5 @@
-var mysql = require('mysql')
 const connection = require('../../db').connection
-const User = require('../../models/user/User')
+const User = require('./User')
 
 class UserDao{
     constructor(){

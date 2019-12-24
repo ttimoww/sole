@@ -8,13 +8,14 @@ router.use(express.json());
 
 /**
  * Register an new user
+ * Expected body: {email: string, firstname: string, lastname: string, pass: string}
  */
 router.post('/register', (req, resp) => {
     const {email, firstName, lastName, pass} = req.body;
     
     UserDao.isEmailAvailable(email, (err, result) => {
         if (err){
-            resp.status(503);
+            resp.status(500);
             resp.json({message: 'Oops, something went wrong.'})
         }
         // In this case email is already in use

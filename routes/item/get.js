@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Item = require('../../models/item/Item')
 const ItemDao = new(require('../../models/item/ItemDao'))
 router.use(express.json());
 
-router.get('/find/:id', (req, resp) => {
+router.get('/get/:id', (req, resp) => {
     ItemDao.getItemByID(req.params.id, (err, Item) => {
         if(err){
             resp.status(500);
