@@ -17,6 +17,10 @@ app.use('/api/size', saveSize)
 const getItem = require('./routes/item/get')
 app.use('/api/item', getItem)
 
+// Get all homepage items
+const getHomepageItem = require('./routes/item/homepage')
+app.use('/api/item', getHomepageItem)
+
 // Serve build version of client
 app.use(express.static('./client/build'));
 

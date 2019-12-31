@@ -22,6 +22,24 @@ class ItemDao{
             }
         })
     }
+
+    getHomePageItems(callback){
+        connection.query('SELECT * FROM item WHERE homepage_product=1', (err, res) => {
+            if (err){
+                console.log(err)
+                callback(true, false)
+            }else{
+                let items = []
+                for (let i = 0; i < res.length; i++) {
+                    let {id, name, sku, color, image, homepage_product} = res[i]
+                    homepage_product = homepage_product == 1 ? true: false;
+                    const I1 = new Item(id, name, sku, color, image, homepage_product)
+                    items.push(I1);
+                }
+                callback(false, items)
+            }
+        })
+    }
 }
 
 module.exports = ItemDao;

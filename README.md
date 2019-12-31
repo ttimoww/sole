@@ -25,7 +25,7 @@ npm run client
 # Run the client & server 
 npm run start
 
-# Run the client & server wwith Sass compiling
+# Run the client & server
 npm run dev
 
 # Server runs on http://localhost:9090 and client on http://localhost:3000
@@ -38,6 +38,7 @@ npm run dev
 2. /api/user/register
 3. /api/size/save
 4. /api/item/get/{id}
+5. /api/item/homepage
 
 ## Used media
 1. Images: All images used in this app are originally from https://stockx.com. I do not own any of these images.
