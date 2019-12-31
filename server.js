@@ -17,4 +17,7 @@ app.use('/api/size', saveSize)
 const getItem = require('./routes/item/get')
 app.use('/api/item', getItem)
 
+// Serve build version of client
+app.use(express.static('./client/build'));
+
 app.listen('9090', () => console.log('Server started on port : 9090'))

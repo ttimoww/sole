@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const UserDao = new(require('../../models/user/UserDao'))
 router.use(express.json());
 
-
 router.post('/login', (req, resp) => {
     const {email, pass} = req.body;
 
