@@ -1,0 +1,22 @@
+div.homepage{
+
+    section.search{
+        margin: 25px 0px;
+        input{
+            box-sizing: border-box;
+            height: 40px;
+            width: calc(100% - 40px);
+        }
+
+        button{
+            box-sizing: border-box;
+            height: 40px;
+            width: 40px;
+            cursor: pointer;
+            svg {
+                display: inline-block;
+                vertical-align: middle;
+              }
+        }
+    }
+}

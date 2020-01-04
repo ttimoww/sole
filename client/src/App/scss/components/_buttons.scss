@@ -1,0 +1,11 @@
+// Main button blue
+button.btn{
+    border: none;
+    text-transform: uppercase;
+    padding: 8px 10px;
+}
+
+button.btn-blue{
+    background-color: $blue;
+    color: #ffffff;
+}

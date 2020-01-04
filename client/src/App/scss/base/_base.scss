@@ -1,0 +1,47 @@
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+p, a, ul, button, input{
+    font-size: 16px;
+}
+
+p{
+    color: rgba(0, 0, 0, .9);
+}
+
+p.subtext{
+    font-size: 14px;
+    color: rgba(0, 0, 0, .7);
+}
+
+a{
+    color: $blue;
+    text-decoration: none;
+}
+
+h1{
+    font-size: 26px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .9);
+}
+
+h2{
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .9);
+}
+
+h3{
+    font-size: 22px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .9);
+}
+
+div.main-wrapper{
+    width: 100%;
+    max-width: 1300px;
+    padding: 0px 14px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}

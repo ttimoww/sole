@@ -1,0 +1,22 @@
+section.header{
+    padding: 15px 0px;
+
+    div.header__container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div.header__logo{
+
+            svg{
+                height: 30px;
+            }
+        }
+
+        div.header__user-info{
+            // border: 1px solid red;
+
+        }
+    }
+}
+
