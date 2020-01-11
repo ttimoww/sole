@@ -10,9 +10,9 @@ const ShoeSliderItem = (props) => {
                 <div className="image">
                     <img src={image} alt=""/>
                 </div>
-                <div className="buy">
+                {/* <div className="buy">
                     <button className="btn btn-blue">Buy Now</button>
-                </div>
+                </div> */}
             </div>
         </div>
      );

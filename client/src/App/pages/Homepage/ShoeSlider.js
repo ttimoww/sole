@@ -2,11 +2,20 @@ import React from 'react';
 import ShoeSliderItem from './ShoeSliderItem';
 
 const ShoeSlider = (props) => {
+
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+    }
+
     return ( 
     <section className="shoe-slider">
-    <p className="shoe-slider__name subtext">{props.name}</p>
+    <h1 className="shoe-slider__name">{props.name}</h1>
         <div className="shoe-slider__container">
-            {props.shoes.map((shoe, i) => (
+            {shuffle(props.shoes).map((shoe, i) => (
                 <ShoeSliderItem key={i} info={shoe} />
             ))}
             
