@@ -3,11 +3,11 @@ const app = express()
 
 // Register User route
 const registerUser = require('./routes/user/register')
-app.use('api/user', registerUser)
+app.use('/api/user', registerUser)
 
 // Login User route
 const loginUser = require('./routes/user/login')
-app.use('api/user', loginUser)
+app.use('/api/user', loginUser)
 
 // Save Size route
 const saveSize = require('./routes/size/save')

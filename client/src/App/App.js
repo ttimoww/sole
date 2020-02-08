@@ -7,12 +7,12 @@ import './scss/main.scss'
 
 class App extends React.Component{
 
-
+  setUserInfo = (firstName, lastName) => {this.setState({firstName: firstName, lastName:lastName})}
   
   render(){
     return (
       <div className="main-wrapper">
-        <Header />
+        <Header setUserInfo={this.setUserInfo} />
         <Switch>
             <Route exact path="/" component={Homepage} />
         </Switch>

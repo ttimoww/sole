@@ -12,23 +12,22 @@ router.use(express.json());
  */
 router.post('/register', (req, resp) => {
     const {email, firstName, lastName, pass} = req.body;
-    
+    console.log(email, firstName, lastName, pass)
     UserDao.isEmailAvailable(email, (err, result) => {
         if (err){
             resp.status(500);
             resp.json({message: 'Oops, something went wrong.'})
         }
-        // In this case email is already in use
         else if(!result){
             resp.status(409);
             resp.json({message: 'Sorry, this email is already taken.'})
         }else{
             const hashedPass = bcrypt.hashSync(pass, 10);
-            const U1 = new User(null, firstName,lastName, email, hashedPass)
+            const U1 = new User(null, firstName, lastName, email, hashedPass)
 
             UserDao.saveUser(U1, error => {
                 if (error){
-                    resp.status(503);
+                    resp.status(500);
                     resp.json({message: 'Oops, something went wrong.'})
                 }else{
                     resp.status(200)
