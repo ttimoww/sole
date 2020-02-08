@@ -1,25 +1,17 @@
 const express = require('express')
 const app = express()
 
-// Register User route
-const registerUser = require('./routes/user/register')
-app.use('/api/user', registerUser)
+// Sizes - POST
+const postSize = require('./routes/size/post')
+app.use('/api/size', postSize)
 
-// Login User route
-const loginUser = require('./routes/user/login')
-app.use('/api/user', loginUser)
+// User - POST
+const postUser = require('./routes/user/post')
+app.use('/api/user', postUser)
 
-// Save Size route
-const saveSize = require('./routes/size/save')
-app.use('/api/size', saveSize)
-
-// Get Item route
-const getItem = require('./routes/item/get')
-app.use('/api/item', getItem)
-
-// Get all homepage items
-const getHomepageItem = require('./routes/item/homepage')
-app.use('/api/item', getHomepageItem)
+// Items - GET
+const getItems = require('./routes/item/get')
+app.use('/api/item', getItems)
 
 // Brands - GET
 const getBrands = require('./routes/brand/get')

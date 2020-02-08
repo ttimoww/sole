@@ -3,7 +3,7 @@ const router = express.Router();
 const ItemDao = new(require('../../models/item/ItemDao'))
 router.use(express.json());
 
-router.get('/get/:id', (req, resp) => {
+router.get('/id/:id', (req, resp) => {
     ItemDao.getItemByID(req.params.id, (err, Item) => {
         if(err){
             resp.status(500);
@@ -21,6 +21,18 @@ router.get('/get/:id', (req, resp) => {
                 color: color,
                 image: image
             })
+        }
+    });
+});
+
+router.get('/homepage', (req, resp) => {
+    ItemDao.getHomePageItems((err, items) => {
+        if (err){
+            resp.status(500)
+            resp.json({message: 'Oops, something went wrong!'})
+        }else{
+            resp.status(200)
+            resp.json({items: items})
         }
     });
 })
