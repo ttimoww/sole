@@ -1,5 +1,5 @@
 import React from 'react';
-import banner1 from './banner_obsidian.jpg'
+import banner1 from './media/banner_obsidian.jpg'
 
 const Banner = () => {
     return ( 

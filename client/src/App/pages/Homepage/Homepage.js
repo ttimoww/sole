@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Search from './Search'
+import SearchBar from './SearchBar'
 import ShoeSlider from './ShoeSlider'
 import Banner from './Banner'
 
@@ -8,6 +8,7 @@ class Homepage extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            searchActive: false,
             featuredShoes: []
          }
     }
@@ -19,15 +20,15 @@ class Homepage extends Component {
                 featuredShoes: resp.data.items
             })
         })
-
     }
 
+    handleToggleSearch = () => { this.setState({searchActive: !this.state.searchActive})}
 
     render() { 
         return ( 
             <div className="homepage">
-                {/* <Banner /> */}
-                <Search />
+                <Banner />
+                <SearchBar toggleSearch={this.handleToggleSearch} />
                 <ShoeSlider name="Featured Shoes" shoes={this.state.featuredShoes} />
                 <ShoeSlider name="Newest listings" shoes={this.state.featuredShoes} />
                 <ShoeSlider name="Last 10 sales" shoes={this.state.featuredShoes} />
