@@ -21,6 +21,10 @@ app.use('/api/item', getItem)
 const getHomepageItem = require('./routes/item/homepage')
 app.use('/api/item', getHomepageItem)
 
+// Brands - GET
+const getBrands = require('./routes/brand/get')
+app.use('/api/brand', getBrands)
+
 // Serve build version of client
 app.use(express.static('./client/build'));
 
