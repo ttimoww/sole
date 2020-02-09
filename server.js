@@ -5,6 +5,10 @@ const app = express()
 const postSize = require('./routes/size/post')
 app.use('/api/size', postSize)
 
+// Sizes - GET
+const getSize = require('./routes/size/get')
+app.use('/api/size', getSize)
+
 // User - POST
 const postUser = require('./routes/user/post')
 app.use('/api/user', postUser)

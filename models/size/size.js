@@ -4,12 +4,12 @@ class Size{
      * 
      * @param {Integer} id 
      * @param {Integer} itemID 
-     * @param {Array} sizes 
+     * @param {string} size
      */
-    constructor(id, itemID, sizes){
+    constructor(id, itemID, size){
         this.id = id,
         this.itemID = itemID,
-        this.sizes = sizes
+        this.size = size
     }
 }
 
