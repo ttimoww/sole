@@ -13,17 +13,32 @@ router.get('/id/:id', (req, resp) => {
             resp.json({message: `No product found with id ${req.params.id}`})
         }else{
             resp.status(200)
-            const {id, name, sku, color, image} = Item;
-            resp.json({
-                id: id,
-                name: name,
-                sku: sku,
-                color: color,
-                image: image
-            })
+            resp.json(Item)
         }
     });
 });
+
+router.get('/keywords', (req, resp) => {
+    if(req.query.keywords){
+        const keywords = req.query.keywords.split('%')
+        
+        ItemDao.getItemsByKeywords(keywords, (err, items) => {
+            if(err){
+                resp.status(500);
+                resp.json({message: 'Oops, something went wrong.'})
+            }else if(!items){
+                resp.status(404);
+                resp.json({message: 'No products found with id'})
+            }else{
+                resp.status(200)
+                resp.json({}) 
+            }
+        })   
+    }else{
+        resp.status(500)
+        resp.json({message: 'No keywords found'})
+    }
+})
 
 router.get('/homepage', (req, resp) => {
     ItemDao.getHomePageItems((err, items) => {
